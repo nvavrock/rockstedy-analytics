@@ -1,0 +1,14 @@
+﻿.env
+__pycache__/
+*.pyc
+.vscode/
+.DS_Store
+# Repo hygiene
+data/
+notebooks/.ipynb_checkpoints/
+# Keep my personsal stuff private
+careerprofile.pdf
+interview
+.txt
+#Protect my Personal info
+me/
