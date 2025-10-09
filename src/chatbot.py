@@ -26,15 +26,15 @@ load_dotenv(override=True)
 
 
 # record someone’s email + name if they give it
-def record_user_details(email, name="Name not provided", notes="not provided"):
-    push(f"Recording {name} with email {email} and notes {notes}")
-    return {"recorded": "ok"}   # just says “ok” back
+#def record_user_details(email, name="Name not provided", notes="not provided"):
+ #   push(f"Recording {name} with email {email} and notes {notes}")
+ #   return {"recorded": "ok"}   # just says “ok” back
 
 
 # record a question if the bot doesn’t know the answer
-def record_unknown_question(question):
-    push(f"Recording {question}")
-    return {"recorded": "ok"}   # again, says “ok” back
+#def record_unknown_question(question):
+#    push(f"Recording {question}")
+#    return {"recorded": "ok"}   # again, says “ok” back
 
 
 # this is like instructions for AI to know how to call record_user_details
