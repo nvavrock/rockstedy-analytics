@@ -1,14 +1,18 @@
-﻿.env
+﻿# Python / env
+.venv/
 __pycache__/
 *.pyc
+.env
+
+# Editors / OS
 .vscode/
 .DS_Store
-# Repo hygiene
-data/
+
+# Notebooks / data junk
 notebooks/.ipynb_checkpoints/
-# Keep my personsal stuff private
-careerprofile.pdf
-interview
-.txt
-#Protect my Personal info
+data/
+
+# Personal stuff to keep private
 me/
+careerprofile.pdf
+interview.txt

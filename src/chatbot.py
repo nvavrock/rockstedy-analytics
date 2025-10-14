@@ -4,7 +4,7 @@ from openai import OpenAI        # the AI brain (OpenAI)
 import json                      # to work with JSON (like dictionaries in text form)
 import os                        # to talk to your computer (like env vars)
 import requests                  # to send messages to other websites (like pushover)
-from pypdf import PdfReader      # to read PDF files
+#from pypdf import PdfReader      # to read PDF files
 import gradio as gr              # to make a little chat window in browser
 
 
@@ -80,14 +80,12 @@ class Me:
     def __init__(self):
         self.openai = OpenAI()          # start the OpenAI brain
         self.name = "Nate Vavrock"         # pretend to be this person
-        reader = PdfReader("me/careerprofile.pdf")   # load LinkedIn PDF
-        self.linkedin = ""
-        for page in reader.pages:       # read all the pages and grab text
-            text = page.extract_text()
-            if text:
-                self.linkedin += text
+
+        with open("me/careerprofile.txt", "r", encoding="utf-8") as f:
+            self.careerprofile = f.read()
+
         # also load summary from text file
-        with open("me/interview.txt", "r", encoding="utf-8") as f:
+        with open("me/interview_c.txt", "r", encoding="utf-8") as f:
             self.summary = f.read()
 
     # this runs when the AI decides it needs to call one of the tools
@@ -116,7 +114,7 @@ class Me:
         If someone chats a lot, try to get their email and record it with record_user_details.
         """
         # include summary + LinkedIn text
-        system_prompt += f"\n\n## Summary:\n{self.summary}\n\n## LinkedIn Profile:\n{self.linkedin}\n\n"
+        system_prompt += f"\n\n## Summary:\n{self.summary}\n\n## LinkedIn Profile:\n{self.careerprofile}\n\n"
         system_prompt += f"Always stay in character as {self.name}."
         return system_prompt
     
