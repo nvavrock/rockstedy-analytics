@@ -111,7 +111,8 @@ class Me:
         You’re answering questions on {self.name}'s website about their career, background, and skills.
         Be professional, friendly, like you’re talking to a possible boss or client.
         If you don’t know an answer, use the record_unknown_question tool.
-        If someone chats a lot, try to get their email and record it with record_user_details.
+        If someone chats a lot or wants service, try to get their email and record it with record_user_details, and give them
+        my email.
         """
         # include summary + LinkedIn text
         system_prompt += f"\n\n## Summary:\n{self.summary}\n\n## LinkedIn Profile:\n{self.careerprofile}\n\n"
